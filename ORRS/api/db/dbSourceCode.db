@@ -1,0 +1,422 @@
+
+#************************************************ Creating Database ****************************************************
+
+DROP DATABASE IF EXISTS orrs;
+CREATE DATABASE orrs;
+USE orrs;
+
+
+
+#************************************************* Creating Tables *****************************************************
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
+	userID INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(30) NOT NULL,
+  email VARCHAR(60) NOT NULL,
+  password VARCHAR(60) NOT NULL,
+  status VARCHAR(30) NOT NULL,
+  CONSTRAINT PRIMARY KEY(userID)
+);
+
+INSERT INTO users (name, email, password, status) VALUES ('Thushara','abc@example.com','12345678', '1');
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS roomType;
+CREATE TABLE roomType(
+  roomTypeID VARCHAR (30)NOT NULL,
+  name VARCHAR (30) NOT NULL,
+  noSB INT NOT NULL,
+  noDB INT NOT NULL ,
+  price DOUBLE NOT NULL,
+  otherDetails VARCHAR (90),
+  CONSTRAINT PRIMARY KEY(roomTypeID)
+);
+
+INSERT INTO roomType values ("RT-001", "Suite", 1, 0, 12000.00, "Breakfast Included.");
+INSERT INTO roomType values ("RT-002", "Double Room", 0, 1, 15000.00, "Breakfast Included.");
+INSERT INTO roomType values ("RT-003", "Family Room", 0, 2, 19000.00, "1 Free Bed Available");
+INSERT INTO roomType values ("RT-004", "Classic Double Room", 1, 0, 13000.00, "Breakfast Included.");
+INSERT INTO roomType values ("RT-005", "Superior Double Room", 0, 1, 20000.00, "Breakfast Included.");
+INSERT INTO roomType values ("RT-006", "Superior Family Room", 0, 2, 21000.00, "Breakfast Included.");
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS room;
+CREATE TABLE room(
+  roomID VARCHAR (30) NOT NULL,
+  roomTypeID VARCHAR (30) NOT NULL,
+  status VARCHAR (30) NOT NULL,
+  otherDetails VARCHAR(30) NULL,
+  CONSTRAINT PRIMARY KEY(roomID),
+  CONSTRAINT FOREIGN KEY (roomTypeID) REFERENCES roomType(roomTypeID)
+);
+
+INSERT INTO room VALUES
+  ("R-0001","RT-001","OK","Nothing"),
+  ("R-0002","RT-002","OK","Nothing"),
+  ("R-0003","RT-002","OK","Nothing"),
+  ("R-0004","RT-002","OK","Nothing"),
+  ("R-0005","RT-002","OK","Nothing"),
+  ("R-0006","RT-002","OK","Nothing"),
+  ("R-0007","RT-002","OK","Nothing"),
+  ("R-0008","RT-003","OK","Nothing"),
+  ("R-0009","RT-003","OK","Nothing"),
+  ("R-0010","RT-003","OK","Nothing"),
+  ("R-0011","RT-003","OK","Nothing"),
+  ("R-0012","RT-003","OK","Nothing"),
+  ("R-0013","RT-004","OK","Nothing"),
+  ("R-0014","RT-005","OK","Nothing"),
+  ("R-0015","RT-005","OK","Nothing"),
+  ("R-0016","RT-005","OK","Nothing"),
+  ("R-0017","RT-005","OK","Nothing"),
+  ("R-0018","RT-006","OK","Nothing"),
+  ("R-0019","RT-006","OK","Nothing"),
+  ("R-0020","RT-006","OK","Nothing"),
+  ("R-0021","RT-001","OK","Nothing"),
+  ("R-0022","RT-002","OK","Nothing"),
+  ("R-0023","RT-002","OK","Nothing"),
+  ("R-0024","RT-002","OK","Nothing"),
+  ("R-0025","RT-002","OK","Nothing"),
+  ("R-0026","RT-002","OK","Nothing"),
+  ("R-0027","RT-002","OK","Nothing"),
+  ("R-0028","RT-003","OK","Nothing"),
+  ("R-0029","RT-003","OK","Nothing"),
+  ("R-0030","RT-003","OK","Nothing"),
+  ("R-0031","RT-003","OK","Nothing"),
+  ("R-0032","RT-003","OK","Nothing"),
+  ("R-0033","RT-004","OK","Nothing"),
+  ("R-0034","RT-005","OK","Nothing"),
+  ("R-0035","RT-005","OK","Nothing"),
+  ("R-0036","RT-005","OK","Nothing"),
+  ("R-0037","RT-005","OK","Nothing"),
+  ("R-0038","RT-006","OK","Nothing"),
+  ("R-0039","RT-006","OK","Nothing"),
+  ("R-0040","RT-006","OK","Nothing"),
+  ("R-0041","RT-001","OK","Nothing"),
+  ("R-0042","RT-002","OK","Nothing"),
+  ("R-0043","RT-002","OK","Nothing"),
+  ("R-0044","RT-002","OK","Nothing"),
+  ("R-0045","RT-002","OK","Nothing"),
+  ("R-0046","RT-002","OK","Nothing"),
+  ("R-0047","RT-002","OK","Nothing"),
+  ("R-0048","RT-003","OK","Nothing"),
+  ("R-0049","RT-003","OK","Nothing"),
+  ("R-0050","RT-003","OK","Nothing"),
+  ("R-0051","RT-003","OK","Nothing"),
+  ("R-0052","RT-003","OK","Nothing"),
+  ("R-0053","RT-004","OK","Nothing"),
+  ("R-0054","RT-005","OK","Nothing"),
+  ("R-0055","RT-005","OK","Nothing"),
+  ("R-0056","RT-005","OK","Nothing"),
+  ("R-0057","RT-005","OK","Nothing"),
+  ("R-0058","RT-006","OK","Nothing"),
+  ("R-0059","RT-006","OK","Nothing"),
+  ("R-0060","RT-006","OK","Nothing"),
+  ("R-0061","RT-001","OK","Nothing"),
+  ("R-0062","RT-002","OK","Nothing"),
+  ("R-0063","RT-002","OK","Nothing"),
+  ("R-0064","RT-002","OK","Nothing"),
+  ("R-0065","RT-002","OK","Nothing"),
+  ("R-0066","RT-002","OK","Nothing"),
+  ("R-0067","RT-002","OK","Nothing"),
+  ("R-0068","RT-003","OK","Nothing"),
+  ("R-0069","RT-003","OK","Nothing"),
+  ("R-0070","RT-003","OK","Nothing"),
+  ("R-0071","RT-003","OK","Nothing"),
+  ("R-0072","RT-003","OK","Nothing"),
+  ("R-0073","RT-004","OK","Nothing"),
+  ("R-0074","RT-005","OK","Nothing"),
+  ("R-0075","RT-005","OK","Nothing"),
+  ("R-0076","RT-005","OK","Nothing"),
+  ("R-0077","RT-005","OK","Nothing"),
+  ("R-0078","RT-006","OK","Nothing"),
+  ("R-0079","RT-006","OK","Nothing"),
+  ("R-0080","RT-006","OK","Nothing"),
+  ("R-0081","RT-001","OK","Nothing"),
+  ("R-0082","RT-002","OK","Nothing"),
+  ("R-0083","RT-002","OK","Nothing"),
+  ("R-0084","RT-002","OK","Nothing"),
+  ("R-0085","RT-002","OK","Nothing"),
+  ("R-0086","RT-002","OK","Nothing"),
+  ("R-0087","RT-002","OK","Nothing"),
+  ("R-0088","RT-003","OK","Nothing"),
+  ("R-0089","RT-003","OK","Nothing"),
+  ("R-0090","RT-003","OK","Nothing"),
+  ("R-0091","RT-003","OK","Nothing"),
+  ("R-0092","RT-003","OK","Nothing"),
+  ("R-0093","RT-004","OK","Nothing"),
+  ("R-0094","RT-005","OK","Nothing"),
+  ("R-0095","RT-005","OK","Nothing"),
+  ("R-0096","RT-005","OK","Nothing"),
+  ("R-0097","RT-005","OK","Nothing"),
+  ("R-0098","RT-006","OK","Nothing"),
+  ("R-0099","RT-006","OK","Nothing"),
+  ("R-0100","RT-006","OK","Nothing"),
+  ("R-0101","RT-001","OK","Nothing"),
+  ("R-0102","RT-002","OK","Nothing"),
+  ("R-0103","RT-002","OK","Nothing"),
+  ("R-0104","RT-002","OK","Nothing"),
+  ("R-0105","RT-002","OK","Nothing"),
+  ("R-0106","RT-002","OK","Nothing"),
+  ("R-0107","RT-002","OK","Nothing"),
+  ("R-0108","RT-003","OK","Nothing"),
+  ("R-0109","RT-003","OK","Nothing"),
+  ("R-0110","RT-003","OK","Nothing"),
+  ("R-0111","RT-003","OK","Nothing"),
+  ("R-0112","RT-003","OK","Nothing"),
+  ("R-0113","RT-004","OK","Nothing"),
+  ("R-0114","RT-005","OK","Nothing"),
+  ("R-0115","RT-005","OK","Nothing"),
+  ("R-0116","RT-005","OK","Nothing"),
+  ("R-0117","RT-005","OK","Nothing"),
+  ("R-0118","RT-006","OK","Nothing"),
+  ("R-0119","RT-006","OK","Nothing"),
+  ("R-0120","RT-006","OK","Nothing"),
+  ("R-0121","RT-001","OK","Nothing"),
+  ("R-0122","RT-002","OK","Nothing"),
+  ("R-0123","RT-002","OK","Nothing"),
+  ("R-0124","RT-002","OK","Nothing"),
+  ("R-0125","RT-002","OK","Nothing"),
+  ("R-0126","RT-002","OK","Nothing"),
+  ("R-0127","RT-002","OK","Nothing"),
+  ("R-0128","RT-003","OK","Nothing"),
+  ("R-0129","RT-003","OK","Nothing"),
+  ("R-0130","RT-003","OK","Nothing"),
+  ("R-0131","RT-003","OK","Nothing"),
+  ("R-0132","RT-003","OK","Nothing"),
+  ("R-0133","RT-004","OK","Nothing"),
+  ("R-0134","RT-005","OK","Nothing"),
+  ("R-0135","RT-005","OK","Nothing"),
+  ("R-0136","RT-005","OK","Nothing"),
+  ("R-0137","RT-005","OK","Nothing"),
+  ("R-0138","RT-006","OK","Nothing"),
+  ("R-0139","RT-006","OK","Nothing"),
+  ("R-0140","RT-006","OK","Nothing"),
+  ("R-0141","RT-001","OK","Nothing"),
+  ("R-0142","RT-002","OK","Nothing"),
+  ("R-0143","RT-002","OK","Nothing"),
+  ("R-0144","RT-002","OK","Nothing"),
+  ("R-0145","RT-002","OK","Nothing"),
+  ("R-0146","RT-002","OK","Nothing"),
+  ("R-0147","RT-002","OK","Nothing"),
+  ("R-0148","RT-003","OK","Nothing"),
+  ("R-0149","RT-003","OK","Nothing"),
+  ("R-0150","RT-003","OK","Nothing"),
+  ("R-0151","RT-003","OK","Nothing"),
+  ("R-0152","RT-003","OK","Nothing"),
+  ("R-0153","RT-004","OK","Nothing"),
+  ("R-0154","RT-005","OK","Nothing"),
+  ("R-0155","RT-005","OK","Nothing"),
+  ("R-0156","RT-005","OK","Nothing"),
+  ("R-0157","RT-005","OK","Nothing"),
+  ("R-0158","RT-006","OK","Nothing"),
+  ("R-0159","RT-006","OK","Nothing"),
+  ("R-0160","RT-006","OK","Nothing"),
+  ("R-0161","RT-001","OK","Nothing"),
+  ("R-0162","RT-002","OK","Nothing"),
+  ("R-0163","RT-002","OK","Nothing"),
+  ("R-0164","RT-002","OK","Nothing"),
+  ("R-0165","RT-002","OK","Nothing"),
+  ("R-0166","RT-002","OK","Nothing"),
+  ("R-0167","RT-002","OK","Nothing"),
+  ("R-0168","RT-003","OK","Nothing"),
+  ("R-0169","RT-003","OK","Nothing"),
+  ("R-0170","RT-003","OK","Nothing"),
+  ("R-0171","RT-003","OK","Nothing"),
+  ("R-0172","RT-003","OK","Nothing"),
+  ("R-0173","RT-004","OK","Nothing"),
+  ("R-0174","RT-005","OK","Nothing"),
+  ("R-0175","RT-005","OK","Nothing"),
+  ("R-0176","RT-005","OK","Nothing"),
+  ("R-0177","RT-005","OK","Nothing"),
+  ("R-0178","RT-006","OK","Nothing"),
+  ("R-0179","RT-006","OK","Nothing"),
+  ("R-0180","RT-006","OK","Nothing"),
+  ("R-0181","RT-001","OK","Nothing"),
+  ("R-0182","RT-002","OK","Nothing"),
+  ("R-0183","RT-002","OK","Nothing"),
+  ("R-0184","RT-002","OK","Nothing"),
+  ("R-0185","RT-002","OK","Nothing"),
+  ("R-0186","RT-002","OK","Nothing"),
+  ("R-0187","RT-002","OK","Nothing"),
+  ("R-0188","RT-003","OK","Nothing"),
+  ("R-0189","RT-003","OK","Nothing"),
+  ("R-0190","RT-003","OK","Nothing"),
+  ("R-0191","RT-003","OK","Nothing"),
+  ("R-0192","RT-003","OK","Nothing"),
+  ("R-0193","RT-004","OK","Nothing"),
+  ("R-0194","RT-005","OK","Nothing"),
+  ("R-0195","RT-005","OK","Nothing"),
+  ("R-0196","RT-005","OK","Nothing"),
+  ("R-0197","RT-005","OK","Nothing"),
+  ("R-0198","RT-006","OK","Nothing"),
+  ("R-0199","RT-006","OK","Nothing"),
+  ("R-0200","RT-006","OK","Nothing");
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS reservation;
+CREATE TABLE reservation(
+  reservationID INT NOT NULL AUTO_INCREMENT,
+  userID INT NOT NULL,
+  checkInDate DATE NOT NULL,
+  checkOutDate DATE NOT NULL,
+  adults INT NOT NULL,
+  children INT NOT NULL,
+  reservedDate DATE NOT NULL,
+  reservedTime TIME NOT NULL,
+  CONSTRAINT PRIMARY KEY (reservationID),
+  CONSTRAINT FOREIGN KEY (userID) REFERENCES users(userID)
+);
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS reservationDetail;
+CREATE TABLE reservationDetail(
+  reservationID INT NOT NULL,
+  roomTypeID VARCHAR (30) NOT NULL,
+  nor INT NOT NULL,
+  total DOUBLE (10,2),
+  CONSTRAINT PRIMARY KEY (reservationID, roomTypeID)
+);
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS payment;
+CREATE TABLE payment(
+  paymentID INT NOT NULL AUTO_INCREMENT,
+  reservationID INT NOT NULL,
+  netTotal DOUBLE (10,2),
+  cardType VARCHAR (30),
+  cardNumber VARCHAR (60),
+  expDate VARCHAR (30),
+  CONSTRAINT PRIMARY KEY(paymentID),
+  CONSTRAINT FOREIGN KEY (reservationID) REFERENCES reservation(reservationID)
+);
+
+
+#************************************************ Creating Routines ****************************************************
+
+#=========================================== *Procedures , Triggers & Functions* =======================================
+
+#------------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS signUp;
+DELIMITER $$;
+CREATE PROCEDURE signUp(
+	name_vbl VARCHAR(30),
+  email_vbl VARCHAR(60),
+  password_vbl VARCHAR(60),
+  status_vbl VARCHAR(30)
+)
+BEGIN
+	DECLARE row_count INTEGER;
+
+    select count(*)into row_count from users where email=email_vbl;
+
+    IF row_count < 1 THEN
+    	insert into users (name, email, password, status) values(name_vbl, email_vbl, password_vbl, status_vbl);
+  	END IF;
+END$$;
+DELIMITER ;
+
+
+#------------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS signIn;
+DELIMITER $$;
+CREATE PROCEDURE signIn(
+  userName_vbl VARCHAR(60),
+  password_vbl VARCHAR(60)
+)
+BEGIN
+  select * from users where email=userName_vbl and password=password_vbl;
+END$$;
+DELIMITER ;
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+DROP PROCEDURE IF EXISTS getRoomAvailability;
+DELIMITER $$;
+CREATE PROCEDURE getRoomAvailability(
+  checkIn_vbl VARCHAR (30),
+  checkOut_vbl VARCHAR (30),
+  roomTypeID_vbl VARCHAR (30)
+)
+BEGIN
+  select sum(reservationDetail.nor) as reserved from  reservation, reservationDetail
+  where reservation.reservationID=reservationDetail.reservationID
+  and ((reservation.checkOutDate BETWEEN checkIn_vbl and checkOut_vbl) or (reservation.checkInDate BETWEEN checkIn_vbl and checkOut_vbl))
+  and reservationDetail.roomTypeID=roomTypeID_vbl;
+END$$;
+DELIMITER ;
+
+#-----------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS addReservation;
+DELIMITER $$;
+CREATE PROCEDURE addReservation(
+  userName_vbl VARCHAR (30),
+  checkInDate_vbl VARCHAR (30),
+  checkOutDate_vbl VARCHAR (30),
+  adults_vbl INT,
+  children_vbl INT
+)
+BEGIN
+  DECLARE userID_vbl INT ;
+  DECLARE nowDate_vbl VARCHAR (30);
+  DECLARE nowTime_vbl VARCHAR (30);
+  select userID from users where email=userName_vbl into userID_vbl;
+  set nowDate_vbl= date(now());
+  set nowTime_vbl= time(now());
+  insert into reservation (userID, checkInDate, checkOutDate, adults, children, reservedDate, reservedTime) values (
+    userID_vbl,
+    checkInDate_vbl,
+    checkOutDate_vbl,
+    adults_vbl,
+    children_vbl,
+    nowDate_vbl,
+    nowTime_vbl
+  );
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS addReservationDetail;
+DELIMITER $$;
+CREATE PROCEDURE addReservationDetail(
+  reservationID_vbl INT,
+  roomTypeID_vbl VARCHAR (30),
+  nor_vbl INT,
+  total_vbl DOUBLE (10,2)
+)
+BEGIN
+  insert into reservationDetail values (reservationID_vbl, roomTypeID_vbl, nor_vbl, total_vbl);
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS addPayment;
+DELIMITER $$;
+CREATE PROCEDURE addPayment(
+  reservationID_vbl INT,
+  cardType_vbl VARCHAR (30),
+  cardNumber_vbl VARCHAR (60),
+  expDate_vbl VARCHAR (30)
+)
+BEGIN
+  DECLARE netTotal_vbl DOUBLE (10,2);
+  select sum(total) from reservationDetail where reservationID=reservationID_vbl into netTotal_vbl;
+  insert into payment (reservationID, netTotal, cardType, cardNumber, expDate) values (reservationID_vbl, netTotal_vbl, cardType_vbl, cardNumber_vbl, expDate_vbl);
+END$$;
+DELIMITER ;
+

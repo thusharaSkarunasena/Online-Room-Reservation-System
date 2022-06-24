@@ -1,0 +1,147 @@
+@media only screen and (max-width: 1300px) {
+
+    #payBtn{
+        margin-left: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    #topTopBar p{
+        font-size: 13px;
+        margin-top: 3px;
+    }
+
+    #nav-bar-mainIndex #title-text h1{
+        padding-left: 2%;
+        font-size: 20px;
+    }
+
+    #payBtn{
+        margin-left: 70%;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+
+
+    #nav-bar-mainIndex #title-text h1{
+        padding-left: 2%;
+        font-size: 18px;
+    }
+
+    #payBtn{
+        margin-left: 60%;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    #topTopBar ul p{
+        display: none;
+    }
+
+    #topTopBar div div div p{
+        position: absolute;
+        padding-left: 50px;
+        font-size: 15px;
+    }
+
+    #nav-bar-icon{
+        height: 37px;
+        width: 50px;
+    }
+
+    #nav-bar-mainIndex #title-text h1{
+        padding-left: 2%;
+        font-size: 18px;
+    }
+
+    #mainContainer{
+        position: fixed;
+        background-color: #AAAAAA;
+        opacity: 0.85;
+        bottom: 0;
+        height: 85.5%;
+        width: 100%;
+    }
+
+    #payBtn{
+        margin-left: 35%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+    #paymentDiv{
+        position: absolute;
+        width: 20%;
+        left: 30%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #paymentDiv h2{
+        font-size: 25px;
+    }
+
+    #topTopBar div div div p{
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+
+    #nav-bar-mainIndex #title-text h1{
+        padding-left: 1%;
+        font-size: 16px;
+    }
+
+    #footer p{
+        font-size: 12px;
+    }
+
+    #payBtn{
+        margin-left: 20%;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+
+    #paymentDiv{
+        position: absolute;
+        width: 20%;
+        left: 30%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #paymentDiv h2{
+        font-size: 20px;
+    }
+
+    #topTopBar div div div p{
+        margin-left: 2px;
+        font-size: 10px;
+    }
+
+    #nav-bar-mainIndex #title-text h1{
+        padding-left: 0%;
+        font-size: 14px;
+    }
+
+    #footer p{
+        font-size: 10px;
+    }
+
+    #payBtn{
+        margin-left: 20%;
+    }
+
+}
+

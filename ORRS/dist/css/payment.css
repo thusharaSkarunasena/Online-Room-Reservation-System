@@ -1,0 +1,64 @@
+html body{
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+#title-text{
+    padding-left: 2%;
+}
+
+#nav-bar-mainIndex #title-text h1{
+    font-size: 25px;
+}
+
+#mainContainer{
+    position: absolute;
+    background-color: #AAAAAA;
+    opacity: 0.85;
+    bottom: 0;
+    height: 80.4%;
+    width: 100%;
+}
+
+#mainForm{
+    position: absolute;
+    background-color: #ffffff ;
+    opacity: 1;
+    left: 20%;
+    bottom: 10%;
+    height: 80%;
+    width: 60%;
+    border-radius: 12px;
+    border: #1A88FF solid 2px;
+    justify-content: center;
+}
+
+#paymentDiv{
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    text-align: center;
+    justify-content: center;
+}
+
+#paymentDiv h2{
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#footer {
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    bottom: -1%;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+#payBtn{
+    margin-left: 80%;
+}

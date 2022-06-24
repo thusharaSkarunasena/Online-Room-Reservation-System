@@ -1,0 +1,149 @@
+@media only screen and (max-width: 1300px) {
+
+    #signInBtn {
+        top: 70%;
+        left: 40%;
+    }
+
+    #signUpBtn {
+        top: 70%;
+        right: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    #signUpBtn {
+        top: 70%;
+        right: 38%;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    #signInBtn {
+        top: 70%;
+        left: 36%;
+    }
+
+    #signUpBtn {
+        top: 70%;
+        right: 36%;
+    }
+
+    #signInPopUp {
+        width: 30%;
+    }
+
+    #signUpPopUp {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    #nav-bar-icon{
+        height: 37px;
+        width: 50px;
+    }
+
+    #title-text{
+        padding-left: 2%;
+        font-size: 20px;
+    }
+
+    #mainTitle h1{
+        font-size: 30px;
+    }
+
+    #subTitle h3{
+        font-size: 25px;
+    }
+
+    #description h5{
+        font-size: 15px;
+    }
+
+    #signInBtn {
+        top: 70%;
+        left: 35%;
+        width: 30%;
+    }
+
+    #signUpBtn {
+        top: 78%;
+        left: 35%;
+        width: 30%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+
+    #title-text{
+        padding-left: 1%;
+        font-size: 16px;
+    }
+
+    #mainTitle h1{
+        font-size: 20px;
+    }
+
+    #subTitle h3{
+        font-size: 25px;
+    }
+
+    #description h5{
+        font-size: 15px;
+    }
+
+
+    #signInBtn {
+        top: 70%;
+        left: 30%;
+        width: 40%;
+    }
+
+    #signUpBtn {
+        top: 78%;
+        left: 30%;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    #title-text{
+        padding-left: 0%;
+        font-size: 14px;
+    }
+
+    #mainTitle h1{
+        font-size: 16px;
+    }
+
+    #subTitle h3{
+        font-size: 16px;
+    }
+
+    #description h5{
+        font-size: 12px;
+    }
+
+    #signInBtn {
+        top: 70%;
+        left: 25%;
+        width: 50%;
+    }
+
+    #signUpBtn {
+        top: 78%;
+        left: 25%;
+        width: 50%;
+    }
+}
+
